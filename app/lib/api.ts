@@ -5,10 +5,7 @@ export async function fetchAPI<T>(
   const fallbackApiUrl = `https://be-sporton.agunacourse.com/api`;
 const apiUrl = process.env.NEXT_PUBLIC_API_URL || fallbackApiUrl;
 const res = await fetch(`${apiUrl}${endpoint}`, { ...options, cache: options?.cache || "no-store", });
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${endpoint}`, {
-    ...options,
-    cache: options?.cache || "no-store", // kita set no-store karena kita ingin mendapat data lebih real time atau lebih updated
-  });
+
 
   if (!res.ok) {
     let errorMessage = `Failed to fetch data from ${endpoint}`;
