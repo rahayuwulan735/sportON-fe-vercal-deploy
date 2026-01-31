@@ -82,12 +82,7 @@ const CategoryManagement = () => {
         onDelete={handleDelete}
         onEdit={handleEdit}
       />
-      <CategoryModal
-        category={selectedCategory}
-        onSuccess={fetchCategories}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
+
       <DeleteModal
         isOpen={isDeleteModalOpen}
         onClose={() => setIsDeleteModalOpen(false)}
